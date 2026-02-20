@@ -2,20 +2,19 @@
 // Note: This was incomplete; I've merged logic from UsersManagement.tsx for completeness.
 // If this is meant to be different, adjust accordingly.
 import { useEffect, useState } from "react";
-import {
-  collection,
-  getDocs,
-  doc,
-  updateDoc,
-  QueryDocumentSnapshot,
+import { 
+  collection, 
+  getFirestore,
+  getDocs, 
+  doc, 
+  updateDoc, 
+  QueryDocumentSnapshot 
 } from "firebase/firestore";
 // @ts-ignore
 import { db } from "../firebase/firebase.ts";
 import { User } from "../types";
 
 // or more explicitly:
-import { Issue } from "../types/issue";
-import type { IssueStatus } from "../types/issue";
 
 // Example in AuthContext.tsx
 

@@ -9,7 +9,7 @@ import {
 import { onAuthStateChanged, User as FirebaseUser, signOut } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 // @ts-ignore
-import { auth, db } from "../firebase/firebase.ts";
+import { auth, db } from "../firebase/firebase";
 import { User } from "../types";
 
 interface AuthContextType {

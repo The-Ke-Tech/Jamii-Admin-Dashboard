@@ -12,7 +12,7 @@ import {
   QueryDocumentSnapshot,
 } from "firebase/firestore";
 // @ts-ignore
-import { auth, db } from "../firebase/firebase.ts";
+import { db } from "../firebase/firebase";          // ← removed unused 'auth'
 import { useAuth } from "../context/AuthContext";
 import { Announcement } from "../types";
 

@@ -11,14 +11,8 @@ import {
 } from "firebase/firestore";
 // @ts-ignore
 import { db } from "../firebase/firebase.ts";
-import { Issue } from "../types";
 
-// or more explicitly:
-
-import type { IssueStatus } from "../types/issue";
-
-// Example in AuthContext.tsx
-
+import type { Issue } from "../types/issue";           // ← removed unused IssueStatus
 
 export default function IssuesManagement() {
   const [issues, setIssues] = useState<Issue[]>([]);
@@ -126,7 +120,9 @@ export default function IssuesManagement() {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {issue.createdAt
-                    ? new Date(issue.createdAt).toLocaleDateString()
+                    ? typeof issue.createdAt === 'string' 
+                      ? new Date(issue.createdAt).toLocaleDateString()
+                      : (issue.createdAt as any).toDate().toLocaleDateString()
                     : "—"}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-3">

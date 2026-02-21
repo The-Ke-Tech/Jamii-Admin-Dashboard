@@ -1,23 +1,15 @@
 // src/pages/Users.tsx
-// Note: This was incomplete; I've merged logic from UsersManagement.tsx for completeness.
-// If this is meant to be different, adjust accordingly.
 import { useEffect, useState } from "react";
 import { 
   collection, 
-  getFirestore,
   getDocs, 
   doc, 
   updateDoc, 
   QueryDocumentSnapshot 
-} from "firebase/firestore";
+} from "firebase/firestore";                             // ← removed unused getFirestore
 // @ts-ignore
-import { db } from "../firebase/firebase.ts";
+import { db } from "../firebase/firebase";
 import { User } from "../types";
-
-// or more explicitly:
-
-// Example in AuthContext.tsx
-
 
 export default function Users() {
   const [users, setUsers] = useState<User[]>([]);
